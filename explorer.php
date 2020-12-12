@@ -39,8 +39,7 @@ endif;
     </select>
 </nav>
 <?php
-$ApachePass = "Password for Apache User Here";
-exec("echo \"$ApachePass\" | sudo -S chmod 0777 {$_SESSION['document_root']}/web", $out);
+exec("echo \"M3g@l1v3\" | sudo -S chmod 0777 {$_SESSION['document_root']}/web", $out);
 // Dir Base
 $base = $_SESSION['document_root'];
 
@@ -104,6 +103,8 @@ if(isset($_GET['download_folder_zip'])):
 endif;
 
 
+
+
 //Actions
 if(isset($act2['action']) && $act2['action'] == true):
     $action = new Actions($fullpath);
@@ -124,7 +125,6 @@ if(isset($act2['action']) && $act2['action'] == true):
         $action->delete($act2['delete']);
     endif;
 endif;
-
 //Tipos Editaveis
 $editaveis = ['html', 'txt', 'js', 'css', 'php'];
 
@@ -253,8 +253,14 @@ foreach($folders as $folder):
                                 <td><a href="#" onclick="actions('<?= $url; ?>', '<?= $path; ?>', 'abrir')"><i class="fa fa-folder" aria-hidden="true"></i> <?= $folder; ?></a></td>
                                 <td><a href="#">Folder</a></td>
                                 <td>
+<?php
+if($path != ''):
+?>
                                     <a href="#" onclick="actions('<?= $folder; ?>', '<?= $path; ?>', 'renomear')"><i class="fa fa-edit" title="Renomear"></i></a>
                                     <a href="#" onclick="actions('<?= $folder; ?>', '<?= $path; ?>', 'deletar')"><i class="fa fa-trash" aria-hidden="true" title="Delete"></i></a>
+<?php
+endif;
+?>
                                     <a href="?folder=<?= $path; ?>/&download_folder_zip=true&folder=<?= $folder; ?>"><i class="fa fa-file-archive-o" aria-hidden="true" title="Download Zip"></i></a>
                                 </td>
                             </tr>
@@ -334,7 +340,7 @@ endif;
             </div>
 
 <?php
-exec("echo \"$ApachePass\" | sudo -S chmod 0711 {$_SESSION['document_root']}/web");
+exec("echo \"M3g@l1v3\" | sudo -S chmod 0711 {$_SESSION['document_root']}/web");
 else:
-    header("location: index.php");
+header("location: index.php");
 endif;
