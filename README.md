@@ -2,7 +2,7 @@
 
 Gerenciador de arquivos compatível com ISPConfig usando Apache, linguagens usadas PHP, bootstrap, Javascript e utilizando CodeMirror
 
-<h5><Caso tenha gostado do projeto e queria doar para ajudar</h5>
+<h5>Caso tenha gostado do projeto e queria doar para ajudar</h5>
 
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SGZFYMH9DXH8G&item_name=Continuar+projetos+free&currency_code=BRL)
