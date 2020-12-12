@@ -151,7 +151,7 @@ $editaveis = ['html', 'txt', 'js', 'css', 'php'];
                                 <input type="file" class="custom-file-input" id="inputGroupFile01" name="file_uploaded" aria-describedby="inputGroupFileAddon01">
                                 <label class="custom-file-label" for="inputGroupFile01">Escolha um Arquivo</label>
                             </div>
-                            <button type="submit" class="btn btn-secondary col-xs-2" name="upload">Eviar</button>
+                            <button type="submit" class="btn btn-secondary col-xs-2" name="upload">Enviar</button>
                             <input type="hidden" name="folder" value="<?= $path; ?>">
                             <input type="hidden" name="upload_dir" value="<?= $fullpath; ?>">
                         </div>
