@@ -52,7 +52,7 @@ class Login {
     private function verificarDados() {
         $svrDados = new Read();
         //Pega a senha do banco de dados para usar como SALT na verificação
-        $svrDados->FullRead('SELECT userid, username, passwort FROM sys_user WHERE username = :username', ['username' => $this->UserName]);
+        $svrDados->FullRead('SELECT userid, username, default_group, passwort FROM sys_user WHERE username = :username', ['username' => $this->UserName]);
         if($svrDados->getRowCount() === 1):
             if(crypt($this->Password, $svrDados->getResult()[0]['passwort']) == $svrDados->getResult()[0]['passwort']):
                 $this->Result['sys'] = $svrDados->getResult()[0];        
@@ -68,7 +68,7 @@ class Login {
     
     private function userDomains(){
         $read = new Read();
-        $read->FullRead('SELECT sys_groupid, domain, document_root, web_domain.ssl FROM web_domain WHERE sys_groupid = :user', ['user' => $this->Result['sys']['userid']]);
+        $read->FullRead('SELECT sys_groupid, domain, document_root, web_domain.ssl FROM web_domain WHERE sys_groupid = :user', ['user' => $this->Result['sys']['default_group']]);
         if($read->getRowCount() > 0):
             $this->Result['domain'] = $read->getResult();
             $this->setSession();
