@@ -340,7 +340,7 @@ endif;
             </div>
 
 <?php
-exec("echo \"M3g@l1v3\" | sudo -S chmod 0711 {$_SESSION['document_root']}/web");
+exec("echo \"Password Here\" | sudo -S chmod 0711 {$_SESSION['document_root']}/web");
 else:
 header("location: index.php");
 endif;
